@@ -23,14 +23,18 @@ public class CourseServices {
     @Autowired
     private CourseDao courseDao;
 
-    public ResponseModel save(Course course) {
+    public ResponseModel save(CourseDTO course) {
         List<Course> CourseNameExists = courseDao.FindByCourseName(course.getCourseName());
         if (!CourseNameExists.isEmpty()) {
             return ResponseModel.Conflict(APIMessage.COURSE_ALREADY_EXISTS, null);
         }
 
+        Course course1 = CourseDTO.toEntity(course);
+        Course course2 = courseDao.save(course1);
+        CourseDTO toDto = CourseDTO.toDTO(course2);
+
         return ResponseModel.created(APIMessage.COURSE_CREATED,
-                courseDao.save(course));
+                toDto);
 
     }
 

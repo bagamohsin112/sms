@@ -1,6 +1,7 @@
 package com.ytseries.sms.controller;
 
 import com.ytseries.sms.ResponseModel.ResponseModel;
+import com.ytseries.sms.dto.CourseDTO;
 import com.ytseries.sms.entity.Course;
 import com.ytseries.sms.services.CourseServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class CourseController {
 
 
  @PostMapping ("/insertCourse")
-    public ResponseModel insertCourse(@RequestBody Course course)
+    public ResponseModel insertCourse(@RequestBody CourseDTO course)
  {
      return courseServices.save(course);
  }

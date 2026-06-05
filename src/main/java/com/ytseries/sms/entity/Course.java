@@ -1,14 +1,20 @@
 package com.ytseries.sms.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import com.ytseries.sms.Enum.Category;
 import com.ytseries.sms.Enum.Status;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Course {
     @Id

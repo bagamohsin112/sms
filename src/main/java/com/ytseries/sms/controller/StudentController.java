@@ -1,8 +1,10 @@
 package com.ytseries.sms.controller;
 
 import com.ytseries.sms.ResponseModel.ResponseModel;
+import com.ytseries.sms.dto.StudentDTO;
 import com.ytseries.sms.entity.Student;
 import com.ytseries.sms.services.StudentServices;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,9 +20,9 @@ public class StudentController {
     }
 
     @PostMapping("/save")
-    public ResponseModel save(@RequestBody Student student )
+    public ResponseModel save(@RequestBody @Valid StudentDTO dto )
     {
-       return studentServices.save(student);
+       return studentServices.save(dto);
     }
    @GetMapping("/get/{id}" )
     public ResponseModel getStudent(@PathVariable Integer id )

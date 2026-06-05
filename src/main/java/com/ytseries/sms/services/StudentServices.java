@@ -22,7 +22,7 @@ public class StudentServices {
     private StudentDao studentDao;
 
     // Save Student
-    public ResponseModel save(Student students) {
+    public ResponseModel save(StudentDTO students) {
 
           List<Student> PhoneExists =studentDao.findByPhoneno(students.getPhoneno());
           List<Student> EmailExists= studentDao.findByEmail(students.getEmail());
@@ -33,10 +33,12 @@ public class StudentServices {
              throw new DuplicateExceptionResource((APIMessage.Email_Already_exists));
           }
 
-
+   Student student =StudentDTO.toEntity(students);
+          Student student1=studentDao.save(student);
+         StudentDTO toDto= StudentDTO.toDTO(student1);
 
        return ResponseModel.created(APIMessage.Student_Created,
-           studentDao.save(students));
+                                    toDto);
     }
 
     public ResponseModel getStudent(Integer id) {

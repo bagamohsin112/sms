@@ -5,9 +5,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ytseries.sms.Enum.Gender;
 import com.ytseries.sms.Enum.Status;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 public class Student {
