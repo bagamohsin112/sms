@@ -33,5 +33,4 @@ public class Student {
     private Status status;
 
 
-
 }

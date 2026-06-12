@@ -30,4 +30,5 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Student> students;
 
+    private int currentEnrollment;
 }

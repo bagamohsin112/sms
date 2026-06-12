@@ -28,12 +28,7 @@ public class GlobalException {
                 ex.getMessage(),null
         );
     }
-    @ExceptionHandler(Exception.class)
-    public ResponseModel handleException (Exception ex)
-    {
-        return new ResponseModel(HttpStatus.INTERNAL_SERVER_ERROR,
-                "An unexcepted Error occured ,Please try again",null);
-    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();

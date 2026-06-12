@@ -22,4 +22,14 @@ public class APIMessage {
     public static final String COURSE_UPDATED="Course Successfully Updated";
     public static final String CATEGORY_NOT_FOUND = "category Not Found";
 
+    // ---------- Enrollment Service ------
+    public static final String MAX_LIMIT_REACHED = "Course Enrollment limit reached";
+    public static final String STUDENT_ALREADY_ENROLLED = "Student Already Enrollment For this course";
+    public static final String ENROLLMENT_SUCCESS = "New Enrollment Success!";
+    public static final String ENROLLMENT_FATCH_SUCCESS = "Get All Enrollment Success!";
+    public static final String ENROLLMENT_NOT_FOUND = "Enrollment not Found";
+    public static final String ENROLLMENT_FOUND = "Enrollment Found";
+    public static final String ENROLLMENT_DELETE_SUCCESS="Enrollment Deleted Successfully";
+
+
 }

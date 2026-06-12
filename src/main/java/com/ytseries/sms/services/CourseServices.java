@@ -6,7 +6,6 @@ import com.ytseries.sms.dao.CourseDao;
 import com.ytseries.sms.dto.CourseDTO;
 import com.ytseries.sms.entity.Course;
 import com.ytseries.sms.utill.APIMessage;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
